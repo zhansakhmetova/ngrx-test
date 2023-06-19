@@ -1,10 +1,21 @@
-<div class="modal-header">
-  <h4 class="modal-title"></h4>
-  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
-</div>
-<div class="modal-body" >
-
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-</div>
+<section *ngIf="data$ | async as data">
+    <div class="modal-header"  >
+      <h4 class="modal-title">{{data.title}}</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" >
+      <p>Description: {{data.description}}</p>
+      <p>Price: {{data.price}}</p>
+      <p>Category: {{data.category}}</p>
+      <div>
+        <img class="img-fluid" src="{{data.image}}" alt="">
+      </div>
+      <p>
+        Amount: {{data.rating.count}}
+      </p>
+      <p>Rate: {{data.rating.rate}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+</section>

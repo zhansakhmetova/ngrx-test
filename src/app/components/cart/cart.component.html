@@ -1,24 +1,24 @@
-<section class="main" *ngIf="(cart$ | async) as cart; else loading">
-  <div *ngFor="let cart of cart$ | async" class="card">
-    <div class="card-body">
-      <h5 class="card-title">User ID: {{cart.userId}}</h5>
-      <div class="card" style="width: 18rem;" *ngFor="let product of cart.products">
-        <div class="card-body">
-          <h5 class="card-title">ID: {{product.productId}}</h5>
-          <p class="card-text">Quantity: {{product.quantity}}</p>
-          <button class="btn btn-primary" data-bs-target="#exampleModal" (click)="openModal(product.productId)">Read
-            More
-          </button>
+<section class="main" *ngIf="(cartState$ | async) as cartState">
+  <ng-container *ngIf="!cartState.loading; else loadingTmpl">
+    <div *ngFor="let cart of cartState.cart" class="card">
+      <div class="card-body">
+        <h5 class="card-title">User ID: {{cart.userId}}</h5>
+        <div class="card" style="width: 18rem;" *ngFor="let product of cart.products">
+          <div class="card-body">
+            <h5 class="card-title">ID: {{product.productId}}</h5>
+            <p class="card-text">Quantity: {{product.quantity}}</p>
+            <button class="btn btn-primary" data-bs-target="#exampleModal" (click)="openModal(product.productId)">Read
+              More
+            </button>
+          </div>
         </div>
       </div>
+
+      <p class="card-text">Date: {{cart.date}}</p>
     </div>
-
-    <p class="card-text">Date: {{cart.date}}</p>
-  </div>
-
-
+  </ng-container>
 </section>
 
-<ng-template #loading>
+<ng-template #loadingTmpl>
   <p>Loading carts...</p>
 </ng-template>
