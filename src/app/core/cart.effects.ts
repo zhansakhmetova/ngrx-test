@@ -2,10 +2,10 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {loadCart, loadCartError, loadCartSuccess, loadDetails, loadDetailsSuccess} from './actions/cart.actions';
-import {catchError, map, mergeMap, withLatestFrom} from 'rxjs/operators';
+import {catchError, map, mergeMap} from 'rxjs/operators';
 import {CartService} from './cart.service';
 import {of} from 'rxjs';
-import {Details, DetailState} from './model';
+import {DetailState} from './model';
 import {Store} from '@ngrx/store';
 import {HttpClient} from '@angular/common/http';
 
