@@ -25,13 +25,4 @@ export const detailsReducer = createReducer(
   on(CartActions.loadDetails, (state) => ({...state, loading: true})),
   on(CartActions.loadDetailsSuccess,(state, {details}) => ({...state, details, loading: false}))
 );
-// initialStateDetails,
-// on(CartActions.loadDetails, (state) => ({...state, loading: true})),
-// on(CartActions.loadDetailsSuccess, (state, { details }) => ({
-//   ...state,
-//   details: {
-//     ...state.details,
-//     [details.id]: details
-//   },
-//   loading: false
-// })));
+

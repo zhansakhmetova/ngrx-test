@@ -34,41 +34,4 @@ export class CartEffects {
       )
     );
   });
-
-
-  // loadProduct$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(loadDetails),
-  //     withLatestFrom(this.store.select(getProductById)),
-  //     filter(([action, product]) => !product),
-  //     switchMap(([action, product]) =>
-  //       this.http.get(https://fakestoreapi.com/products/${action.id}).pipe(
-  //         map((details: Details[]) => loadDetailsSuccess({ details }))
-  //       )
-  //     )
-  //   )
-  // );
-
-
-
-  // loadProduct$ = createEffect(() => {
-  //   return this.actions$.pipe(
-  //     ofType(loadDetails),
-  //     withLatestFrom(this.store.select(selectProductDetails3)),
-  //     mergeMap((action) =>
-  //       this.cartService.getProductByID(action.id).pipe(
-  //         map((details) => loadDetailsSuccess({ details })),
-  //       )
-  //     )
-  //   );
-  // });
-
-
-  // loadProductDetails$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(loadDetails),
-  //     withLatestFrom(this.store.select(selectProductDetailsLoadedById)), // Check if product details are already loaded
-  //     filter(([action, loaded]) => !loaded), // Only execute if details are not already loaded
-  //   )
-  // );
 }
