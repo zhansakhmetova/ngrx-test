@@ -8,7 +8,7 @@ import {ProductDetailsComponent} from "./components/details/details.component";
 import {HttpClientModule} from "@angular/common/http";
 import {StoreModule} from "@ngrx/store";
 
-import {cartReducer, detailsReducer} from "./core";
+import {cartReducer, detailsReducer} from "./core/cart.reducers";
 import {EffectsModule} from "@ngrx/effects";
 import {CartEffects} from "./core/cart.effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
